@@ -1,0 +1,29 @@
+(def tea-channel (chan))
+exit
+(def tea-channel (chan))
+exit
+(ns async-tea-party.core
+        (:require [clojure.core.async
+                :refer [>! <! >!! <!! chan close! go go-loop alts!]]))(ns async-tea-party.core
+        (:require [clojure.core.async
+                :refer [>! <! >!! <!! chan close! go go-loop alts!]]))
+(ns async-tea-party.core
+        (:require [clojure.core.async
+                :refer [>! <! >!! <!! chan close! go go-loop alts!]]))
+(def tea-channel (chan))
+(def tea-channel (chan 10))
+(>!! tea-channel :cup-of-tea)
+(<!! tea-channel)
+(ns async-tea-party.core
+        (:require [clojure.core.async
+                :refer [>! <! >!! <!! chan close! go go-loop alts!]]))
+(def tea-channel (chan 10))
+(>!! tea-channel :cup-of-tea)
+(<!! tea-channel)
+(>!! tea-channel :cup-of-tea-2)
+(>!! tea-channel :cup-of-tea-3)
+(>!! tea-channel :cup-of-tea-4)
+(close! tea-channel)
+(>!! tea-channel :cup-of-tea-5)
+(<!! tea-channel)
+exit
